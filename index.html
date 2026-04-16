@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookNest — Discover Your Next Great Read</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ========== 1. Navbar ========== -->
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="#home" class="logo">Book<span>Nest</span></a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#featured">Books</a></li>
+        <li><a href="#harry-potter">Harry Potter</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ========== 2. Hero Section ========== -->
+    <section id="home" class="hero">
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="container hero__content">
+        <p class="hero__eyebrow fade-in">Welcome to BookNest</p>
+        <h1 class="hero__title fade-in fade-in--delay-1">Discover Your Next Great Read</h1>
+        <p class="hero__subtitle fade-in fade-in--delay-2">Explore thousands of books from all genres — curated for curious minds.</p>
+        <a href="#featured" class="btn btn--gradient hero__cta fade-in fade-in--delay-3">Browse Books</a>
+      </div>
+    </section>
+
+    <!-- ========== 3. Featured Books ========== -->
+    <section id="featured" class="section featured">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Featured Books</h2>
+          <p class="section__lead">Handpicked titles our readers love this season.</p>
+        </header>
+        <div class="book-grid">
+          <article class="book-card">
+            <div class="book-card__image-wrap">
+              <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=560&fit=crop" alt="Book cover: The Silent Harbor" width="400" height="560" loading="lazy" />
+            </div>
+            <div class="book-card__body">
+              <h3 class="book-card__title">The Silent Harbor</h3>
+              <p class="book-card__author">by Elena Marsh</p>
+              <p class="book-card__desc">A lyrical mystery set on a foggy coast where every tide brings a new secret.</p>
+              <a href="#contact" class="btn btn--outline book-card__btn">Read More</a>
+            </div>
+          </article>
+          <article class="book-card">
+            <div class="book-card__image-wrap">
+              <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&h=560&fit=crop" alt="Book cover: Pages of Tomorrow" width="400" height="560" loading="lazy" />
+            </div>
+            <div class="book-card__body">
+              <h3 class="book-card__title">Pages of Tomorrow</h3>
+              <p class="book-card__author">by James Cole</p>
+              <p class="book-card__desc">Speculative fiction that asks what we owe the future — and each other.</p>
+              <a href="#contact" class="btn btn--outline book-card__btn">Read More</a>
+            </div>
+          </article>
+          <article class="book-card">
+            <div class="book-card__image-wrap">
+              <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=400&h=560&fit=crop" alt="Book cover: The Atlas of Stars" width="400" height="560" loading="lazy" />
+            </div>
+            <div class="book-card__body">
+              <h3 class="book-card__title">The Atlas of Stars</h3>
+              <p class="book-card__author">by Priya Nair</p>
+              <p class="book-card__desc">A sweeping journey through cosmology, told with warmth and wonder.</p>
+              <a href="#contact" class="btn btn--outline book-card__btn">Read More</a>
+            </div>
+          </article>
+          <article class="book-card">
+            <div class="book-card__image-wrap">
+              <img src="https://images.unsplash.com/photo-1524578271613-d550eacf6090?w=400&h=560&fit=crop" alt="Book cover: Rivers of Ink" width="400" height="560" loading="lazy" />
+            </div>
+            <div class="book-card__body">
+              <h3 class="book-card__title">Rivers of Ink</h3>
+              <p class="book-card__author">by Marcus Webb</p>
+              <p class="book-card__desc">Literary essays on reading, memory, and the stories that shape us.</p>
+              <a href="#contact" class="btn btn--outline book-card__btn">Read More</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 3b. Book component: Harry Potter series (click to expand summary) ========== -->
+    <section id="harry-potter" class="section book-series" aria-labelledby="harry-potter-heading">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow"><i class="fa-solid fa-wand-sparkles" aria-hidden="true"></i> Spotlight collection</p>
+          <h2 id="harry-potter-heading" class="section__title">Harry Potter — The Complete Series</h2>
+          <p class="section__lead">Seven novels by J.K. Rowling. Tap a book to read a short summary — no magic (or JavaScript) required.</p>
+        </header>
+        <div class="book-component" role="list">
+          <!-- Each .book is a native disclosure: click summary to show summary text -->
+          <details class="book" name="hp-series">
+            <summary class="book__summary">
+              <span class="book__cover">
+                <img src="https://upload.wikimedia.org/wikipedia/en/6/6b/Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg" alt="Book cover: Harry Potter and the Philosopher’s Stone" width="253" height="394" loading="lazy" />
+              </span>
+              <span class="book__meta">
+                <span class="book__title">Harry Potter and the Philosopher’s Stone</span>
+                <span class="book__author">J.K. Rowling · Book 1</span>
+                <span class="book__cta-hint"><span class="book__cta-icon" aria-hidden="true"><i class="fa-solid fa-circle-plus"></i></span> Show summary</span>
+              </span>
+              <span class="book__chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </summary>
+            <div class="book__panel">
+              <p>Eleven-year-old Harry discovers he is a wizard and leaves the Dursleys for Hogwarts School of Witchcraft and Wizardry. He makes friends, learns the truth about his parents’ death, and faces Lord Voldemort for the first time as the Dark Lord seeks the Sorcerer’s Stone.</p>
+            </div>
+          </details>
+          <details class="book" name="hp-series">
+            <summary class="book__summary">
+              <span class="book__cover">
+                <img src="https://upload.wikimedia.org/wikipedia/en/5/5c/Harry_Potter_and_the_Chamber_of_Secrets.jpg" alt="Book cover: Harry Potter and the Chamber of Secrets" width="253" height="400" loading="lazy" />
+              </span>
+              <span class="book__meta">
+                <span class="book__title">Harry Potter and the Chamber of Secrets</span>
+                <span class="book__author">J.K. Rowling · Book 2</span>
+                <span class="book__cta-hint"><span class="book__cta-icon" aria-hidden="true"><i class="fa-solid fa-circle-plus"></i></span> Show summary</span>
+              </span>
+              <span class="book__chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </summary>
+            <div class="book__panel">
+              <p>In his second year, Harry hears whispers of the Chamber of Secrets and attacks on Muggle-born students. With Ron and Hermione, he uncovers a fifty-year-old mystery involving a memory of Tom Riddle and a deadly basilisk loose beneath the castle.</p>
+            </div>
+          </details>
+          <details class="book" name="hp-series">
+            <summary class="book__summary">
+              <span class="book__cover">
+                <img src="https://upload.wikimedia.org/wikipedia/en/a/a0/Harry_Potter_and_the_Prisoner_of_Azkaban.jpg" alt="Book cover: Harry Potter and the Prisoner of Azkaban" width="253" height="400" loading="lazy" />
+              </span>
+              <span class="book__meta">
+                <span class="book__title">Harry Potter and the Prisoner of Azkaban</span>
+                <span class="book__author">J.K. Rowling · Book 3</span>
+                <span class="book__cta-hint"><span class="book__cta-icon" aria-hidden="true"><i class="fa-solid fa-circle-plus"></i></span> Show summary</span>
+              </span>
+              <span class="book__chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </summary>
+            <div class="book__panel">
+              <p>Sirius Black escapes Azkaban and is believed to be hunting Harry. Dementors guard Hogwarts while Harry learns about his parents’ friends—and that truth, loyalty, and time can change everything you thought you knew.</p>
+            </div>
+          </details>
+          <details class="book" name="hp-series">
+            <summary class="book__summary">
+              <span class="book__cover">
+                <img src="https://upload.wikimedia.org/wikipedia/en/b/b6/Harry_Potter_and_the_Goblet_of_Fire_cover.png" alt="Book cover: Harry Potter and the Goblet of Fire" width="253" height="400" loading="lazy" />
+              </span>
+              <span class="book__meta">
+                <span class="book__title">Harry Potter and the Goblet of Fire</span>
+                <span class="book__author">J.K. Rowling · Book 4</span>
+                <span class="book__cta-hint"><span class="book__cta-icon" aria-hidden="true"><i class="fa-solid fa-circle-plus"></i></span> Show summary</span>
+              </span>
+              <span class="book__chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </summary>
+            <div class="book__panel">
+              <p>The Triwizard Tournament brings two other schools to Hogwarts—and somehow Harry is forced to compete. Dangerous tasks lead to a graveyard confrontation where Voldemort rises again, marking a turning point in the wizarding war.</p>
+            </div>
+          </details>
+          <details class="book" name="hp-series">
+            <summary class="book__summary">
+              <span class="book__cover">
+                <img src="https://upload.wikimedia.org/wikipedia/en/7/70/Harry_Potter_and_the_Order_of_the_Phoenix.jpg" alt="Book cover: Harry Potter and the Order of the Phoenix" width="253" height="400" loading="lazy" />
+              </span>
+              <span class="book__meta">
+                <span class="book__title">Harry Potter and the Order of the Phoenix</span>
+                <span class="book__author">J.K. Rowling · Book 5</span>
+                <span class="book__cta-hint"><span class="book__cta-icon" aria-hidden="true"><i class="fa-solid fa-circle-plus"></i></span> Show summary</span>
+              </span>
+              <span class="book__chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </summary>
+            <div class="book__panel">
+              <p>The Ministry denies Voldemort’s return; Dolores Umbridge tightens control at Hogwarts. Harry wrestles with visions and anger while Dumbledore’s Army prepares to fight—and a prophecy is revealed that binds Harry and Voldemort forever.</p>
+            </div>
+          </details>
+          <details class="book" name="hp-series">
+            <summary class="book__summary">
+              <span class="book__cover">
+                <img src="https://upload.wikimedia.org/wikipedia/en/b/b5/Harry_Potter_and_the_Half-Blood_Prince_cover.png" alt="Book cover: Harry Potter and the Half-Blood Prince" width="253" height="400" loading="lazy" />
+              </span>
+              <span class="book__meta">
+                <span class="book__title">Harry Potter and the Half-Blood Prince</span>
+                <span class="book__author">J.K. Rowling · Book 6</span>
+                <span class="book__cta-hint"><span class="book__cta-icon" aria-hidden="true"><i class="fa-solid fa-circle-plus"></i></span> Show summary</span>
+              </span>
+              <span class="book__chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </summary>
+            <div class="book__panel">
+              <p>Dumbledore gives Harry private lessons into Voldemort’s past and Horcruxes. Draco Malfoy’s mission darkens the year, and Harry inherits a potions book annotated by the mysterious “Half-Blood Prince”—leading to choices that change Hogwarts forever.</p>
+            </div>
+          </details>
+          <details class="book" name="hp-series">
+            <summary class="book__summary">
+              <span class="book__cover">
+                <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/Harry_Potter_and_the_Deathly_Hallows.jpg" alt="Book cover: Harry Potter and the Deathly Hallows" width="253" height="400" loading="lazy" />
+              </span>
+              <span class="book__meta">
+                <span class="book__title">Harry Potter and the Deathly Hallows</span>
+                <span class="book__author">J.K. Rowling · Book 7</span>
+                <span class="book__cta-hint"><span class="book__cta-icon" aria-hidden="true"><i class="fa-solid fa-circle-plus"></i></span> Show summary</span>
+              </span>
+              <span class="book__chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </summary>
+            <div class="book__panel">
+              <p>Harry, Ron, and Hermione hunt Horcruxes on the run as Voldemort’s regime takes hold. Myths of the Deathly Hallows converge with the final battle at Hogwarts—where sacrifice, love, and courage decide the fate of the wizarding world.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 4. Categories ========== -->
+    <section id="categories" class="section categories">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Browse by Category</h2>
+          <p class="section__lead">Find your niche — from timeless fiction to cutting-edge tech.</p>
+        </header>
+        <div class="category-grid">
+          <a href="#featured" class="category-tile">
+            <span class="category-tile__icon" aria-hidden="true"><i class="fa-solid fa-book-open"></i></span>
+            <span class="category-tile__label">Fiction</span>
+          </a>
+          <a href="#featured" class="category-tile">
+            <span class="category-tile__icon" aria-hidden="true"><i class="fa-solid fa-newspaper"></i></span>
+            <span class="category-tile__label">Non-Fiction</span>
+          </a>
+          <a href="#featured" class="category-tile">
+            <span class="category-tile__icon" aria-hidden="true"><i class="fa-solid fa-flask"></i></span>
+            <span class="category-tile__label">Science</span>
+          </a>
+          <a href="#featured" class="category-tile">
+            <span class="category-tile__icon" aria-hidden="true"><i class="fa-solid fa-microchip"></i></span>
+            <span class="category-tile__label">Technology</span>
+          </a>
+          <a href="#featured" class="category-tile">
+            <span class="category-tile__icon" aria-hidden="true"><i class="fa-solid fa-landmark"></i></span>
+            <span class="category-tile__label">History</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 5. About ========== -->
+    <section id="about" class="section about">
+      <div class="container about__grid">
+        <div class="about__image">
+          <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&h=900&fit=crop" alt="Warm library interior with shelves of books" width="800" height="900" loading="lazy" />
+        </div>
+        <div class="about__content">
+          <h2 class="section__title section__title--left">About BookNest</h2>
+          <p class="about__text">
+            BookNest is a modern digital library built for readers who want discovery without clutter. We bring together classics, new releases, and hidden gems in one calm, beautiful space.
+          </p>
+          <ul class="about__features">
+            <li>
+              <span class="about__feature-icon"><i class="fa-solid fa-layer-group"></i></span>
+              <div>
+                <strong>Large collection</strong>
+                <span>Thousands of titles across every major genre and language.</span>
+              </div>
+            </li>
+            <li>
+              <span class="about__feature-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+              <div>
+                <strong>Easy search</strong>
+                <span>Find books by author, topic, or mood in seconds.</span>
+              </div>
+            </li>
+            <li>
+              <span class="about__feature-icon"><i class="fa-solid fa-gift"></i></span>
+              <div>
+                <strong>Free membership</strong>
+                <span>Join at no cost and start building your reading list today.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 6. Testimonials ========== -->
+    <section class="section testimonials">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">What Readers Say</h2>
+          <p class="section__lead">Real voices from our community.</p>
+        </header>
+        <div class="testimonial-grid">
+          <blockquote class="testimonial-card">
+            <div class="testimonial-card__header">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&h=120&fit=crop&crop=face" alt="Portrait of Sarah M." width="56" height="56" loading="lazy" />
+              <div>
+                <cite class="testimonial-card__name">Sarah Mitchell</cite>
+                <span class="testimonial-card__role">Avid reader</span>
+              </div>
+            </div>
+            <p class="testimonial-card__quote">“BookNest made it effortless to explore genres I never tried. The layout is gorgeous and I actually look forward to opening the site.”</p>
+            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+          </blockquote>
+          <blockquote class="testimonial-card">
+            <div class="testimonial-card__header">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop&crop=face" alt="Portrait of David R." width="56" height="56" loading="lazy" />
+              <div>
+                <cite class="testimonial-card__name">David Rivera</cite>
+                <span class="testimonial-card__role">Graduate student</span>
+              </div>
+            </div>
+            <p class="testimonial-card__quote">“I use BookNest for research and leisure. The categories are clear and the featured picks are always on point.”</p>
+            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+          </blockquote>
+          <blockquote class="testimonial-card">
+            <div class="testimonial-card__header">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&h=120&fit=crop&crop=face" alt="Portrait of Amira K." width="56" height="56" loading="lazy" />
+              <div>
+                <cite class="testimonial-card__name">Amira Khan</cite>
+                <span class="testimonial-card__role">Book club host</span>
+              </div>
+            </div>
+            <p class="testimonial-card__quote">“Our club discovered three new authors through BookNest. Clean design, zero distractions — just books.”</p>
+            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 7. Contact (Akanshi) ========== -->
+    <section id="contact" class="section contact-block" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact-block__grid">
+          <div class="contact-block__intro">
+            <p class="section__eyebrow section__eyebrow--dark"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Get in touch</p>
+            <h2 id="contact-heading" class="section__title section__title--left">Contact</h2>
+            <p class="contact-block__lead">Questions about BookNest or collaborations? Reach out — I’m happy to connect.</p>
+            <div class="contact-block__social" aria-label="Social profiles">
+              <a href="https://www.instagram.com/sharad_x10/" class="contact-block__social-btn" target="_blank" rel="noopener noreferrer" aria-label="Instagram — sharad_x10"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://github.com/pariharakanshi33-svg" class="contact-block__social-btn" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class="fa-brands fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/akanshi-parihar-2232873b0/" class="contact-block__social-btn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card__avatar" aria-hidden="true"><i class="fa-solid fa-user"></i></div>
+            <h3 class="contact-card__name">Akanshi Parihar</h3>
+            <p class="contact-card__tagline">VIT · Reader &amp; builder</p>
+            <ul class="contact-card__list">
+              <li>
+                <span class="contact-card__icon"><i class="fa-solid fa-phone"></i></span>
+                <a href="tel:+919460827097">+91 94608 27097</a>
+              </li>
+              <li>
+                <span class="contact-card__icon"><i class="fa-solid fa-envelope"></i></span>
+                <a href="mailto:pariharakansh33@gmail.com">pariharakansh33@gmail.com</a>
+              </li>
+              <li>
+                <span class="contact-card__icon"><i class="fa-solid fa-building-columns"></i></span>
+                <span>Vellore Institute of Technology (VIT)</span>
+              </li>
+            </ul>
+            <div class="contact-card__note">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              <span>Typical reply within 1–2 business days.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== 8. Footer ========== -->
+  <footer class="site-footer" id="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="#home" class="logo logo--footer">Book<span>Nest</span></a>
+        <p>Your quiet corner for stories, ideas, and inspiration.</p>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__heading">Quick Links</h3>
+        <ul class="footer__links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#featured">Books</a></li>
+          <li><a href="#harry-potter">Harry Potter</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__heading">Contact</h3>
+        <ul class="footer__contact">
+          <li><i class="fa-solid fa-user"></i> Akanshi Parihar</li>
+          <li><i class="fa-solid fa-building-columns"></i> VIT</li>
+          <li><i class="fa-solid fa-phone"></i> <a href="tel:+919460827097">9460827097</a></li>
+          <li><i class="fa-solid fa-envelope"></i> <a href="mailto:pariharakansh33@gmail.com">pariharakansh33@gmail.com</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__heading">Follow</h3>
+        <div class="footer__social">
+          <a href="https://www.instagram.com/sharad_x10/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="footer__social-link"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://github.com/pariharakanshi33-svg" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="footer__social-link"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/akanshi-parihar-2232873b0/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="footer__social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>&copy; <span>2026</span> BookNest · Curated by Akanshi Parihar</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
